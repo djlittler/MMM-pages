@@ -161,6 +161,7 @@ Module.register('MMM-pages', {
         this.resetTimerWithDelay(this.config.rotationDelay);
       }
       this.sendNotification('NEW_PAGE', this.curPage);
+      this.sendNotification('PAGE_MODULES', this.config.modules[this.curPage]);
     } else { Log.error("[Pages]: Pages aren't properly defined!"); }
   },
 
@@ -184,6 +185,7 @@ Module.register('MMM-pages', {
 
     // Shows all modules meant to be on the current page, after a small delay.
     setTimeout(() => {
+      //IMPORTANT
       MM.getModules()
         .withClass(self.config.modules[self.curPage])
         .enumerate((module) => {
