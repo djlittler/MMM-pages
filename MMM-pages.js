@@ -73,6 +73,7 @@ Module.register('MMM-pages', {
         Log.log('[Pages]: received a notification '
           + `to change to page ${payload} of type ${typeof payload}`);
         this.curPage = payload;
+        self.sendNotification('PAGE_MODULES', i);
         this.updatePages();
         break;
       case 'PAGE_INCREMENT':
