@@ -161,7 +161,7 @@ Module.register('MMM-pages', {
         this.resetTimerWithDelay(this.config.rotationDelay);
       }
       this.sendNotification('NEW_PAGE', this.curPage);
-      this.sendNotification('PAGE_MODULES', this.curPage);
+      this.sendNotification('PAGE_MODULES', this.config.modules[this.curPage]);
     } else { Log.error("[Pages]: Pages aren't properly defined!"); }
   },
 
